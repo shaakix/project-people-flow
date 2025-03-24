@@ -1,0 +1,60 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title Styling */
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Controls (Buttons) */
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#startButton {
+    background-color: #28a745;
+    color: white;
+}
+
+#startButton:hover {
+    background-color: #218838;
+}
+
+#stopButton {
+    background-color: #dc3545;
+    color: white;
+}
+
+#stopButton:hover {
+    background-color: #c82333;
+}
+
+#stopButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Simulation Canvas */
+canvas {
+    display: block;
+    margin: 20px auto;
+    background-color: white;
+    border: 2px solid #333;
+}
