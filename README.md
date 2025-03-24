@@ -18,6 +18,7 @@ This project was created to demonstrate full-stack development, data visualizati
 
 ---
 🧱 Project Structure
+
 Part 1: people-flow-simulator
 Built with: HTML + JavaScript
 
