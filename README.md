@@ -1,64 +1,76 @@
-# 🛰️ Project People Flow – Real-Time Occupancy Dashboard
+# 🛰️ Project People Flow – Simulator & Dashboard
 
-**Project People Flow** is a real-time building occupancy monitoring dashboard built with **PHP**, **MySQL**, and **Chart.js**. It simulates and visualizes the movement of employees and visitors in a building.
-
-This project was created to demonstrate full-stack development, data visualization, and PDF reporting skills — tailored toward smart building analytics and companies like **Xovis**.
+**Project People Flow** is a two-part system that simulates and analyzes foot traffic within a building. It consists of a front-end **People Flow Simulator** and a back-end **Dashboard Analytics System**, built to showcase full-stack development, data visualization, and smart reporting for real-world people-tracking scenarios.
 
 ---
 
-## 📊 Features
-
-- ✅ CSV upload of people flow simulation data
-- ✅ Real-time total entry counter
-- ✅ Peak time visualization (entries per minute)
-- ✅ People type breakdown (employee vs visitor – pie chart)
-- ✅ Daily traffic report table
-- ✅ PDF report export for management
-- ✅ Simple, clean UI with upload & dashboard navigation
-
----
-🧱 Project Structure
-
-Part 1: people-flow-simulator
-Built with: HTML + JavaScript
-
-Purpose: Simulate entries/exits and export CSV files
-
-Part 2: project-people-flow
-Built with: PHP + MySQL + Chart.js
-
-Purpose: Upload CSV, store in DB, visualize, and export PDF reports
-
----
-
-## 📁 Folder Structure
+## 🧩 Project Structure
 
 ```
 project-people-flow/
-├── index.php          # Upload and Clear interface
-├── upload.php         # CSV parser and DB importer
-├── clear.php          # Deletes all database records
-├── dashboard.php      # Main dashboard with charts and report
-├── uploads/           # Optional: folder to store uploaded CSVs
+├── simulator/       # Frontend simulation tool
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── dashboard/       # Backend visualization and reporting
+│   ├── index.php
+│   ├── dashboard.php
+│   ├── upload.php
+│   ├── clear.php
+│   ├── uploads/
+│   └── README.md
 ```
 
 ---
 
-## 💡 Tech Stack
+## 🎮 1. People Flow Simulator (Frontend)
 
-- **Frontend**: HTML5, CSS3, Chart.js  
-- **Backend**: PHP (vanilla), MySQL  
-- **Libraries**:
-  - [`Chart.js`](https://www.chartjs.org/) – for beautiful data visualizations
-  - [`html2pdf.js`](https://ekoopmans.github.io/html2pdf/) – for exporting the dashboard to PDF
+- Built with **HTML5 + JavaScript**
+- Simulates employees and visitors entering/exiting a building
+- Generates a CSV file with:
+  - Person ID
+  - Person Type (employee/visitor)
+  - Entry Time
+  - Exit Time
+  - Duration inside
+
+🟢 **Output**: `people-flow-data.csv` ready for upload into the dashboard
 
 ---
 
-## 🔌 How to Run Locally
+## 📊 2. Project Dashboard (Backend)
 
-1. Install **WAMP**, **XAMPP**, or any PHP-MySQL stack.
-2. Place the folder inside `www` or `htdocs` (e.g. `C:\wamp64\www\project-people-flow`).
-3. Create a database called `xovis_db`, and use the following SQL to create the table:
+- Built with **PHP**, **MySQL**, and **Chart.js**
+- Upload CSV files from simulator
+- Stores data in a MySQL database
+- Displays:
+
+| Feature                      | Description                                   |
+|-----------------------------|-----------------------------------------------|
+| ✅ Total People Today        | Counter of all entries for the selected day   |
+| ✅ Peak Time Graph           | Entries per minute (bar chart)                |
+| ✅ People Type Breakdown     | Pie chart: employees vs. visitors             |
+| ✅ Daily Traffic Report      | Tabular view of daily counts                  |
+| ✅ PDF Report Export         | One-click downloadable report                 |
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Backend**: PHP (Vanilla), MySQL
+- **Libraries**:
+  - [Chart.js](https://www.chartjs.org/) – for data visualization
+  - [html2pdf.js](https://ekoopmans.github.io/html2pdf/) – for report generation
+
+---
+
+## 🖥️ How to Run Locally
+
+1. Install [WAMP](https://www.wampserver.com/en/) or [XAMPP](https://www.apachefriends.org/index.html)
+2. Place the `project-people-flow` folder inside your `www` or `htdocs` directory
+3. Create a MySQL database `xovis_db` and run:
 
 ```sql
 CREATE TABLE people_flow (
@@ -70,40 +82,37 @@ CREATE TABLE people_flow (
 );
 ```
 
-4. Open your browser and visit:
-```
-http://localhost/project-people-flow/
-```
+4. Open your browser:
+   - Run simulator at `simulator/index.html` (locally)
+   - Access dashboard at: `http://localhost/project-people-flow/dashboard/index.php`
 
 ---
 
-## 📂 Sample CSV Format
+## 📥 Sample CSV Format
 
 ```csv
 ID,Type,Entry Time,Exit Time,Duration (seconds)
-33973,employee,2025-03-23T02:07:47.234Z,2025-03-23T02:07:54.196Z,6.962
-41352,visitor,2025-03-23T02:07:49.032Z,2025-03-23T02:07:54.862Z,5.83
-...
+6248,employee,2025-03-23T02:07:47.234Z,2025-03-23T02:07:54.196Z,6.96
+2791,visitor,2025-03-23T02:07:49.032Z,2025-03-23T02:07:54.862Z,5.83
 ```
 
 ---
 
-## 📄 Output PDF Example
+## 📄 PDF Report
 
-After uploading data, open the dashboard and click **“Download PDF Report”** to generate a clean PDF summary of the day's stats and charts — ideal for management reporting.
+Click the **"Download PDF Report"** button on the dashboard to export daily statistics and charts for management or archival use.
 
 ---
 
-## 💼 Author
+## 👨‍💻 Author
 
 **Shakir**  
-- Data Science Master's Student  
-- 🇩🇪 Based in Germany  
-- 📧 [mr.shakirullah@gmail.com](mailto:mr.shakirullah@gmail.com)  
-- 🔗 [LinkedIn](https://www.linkedin.com/) *(Add your link if you want)*
+🎓 MSc Data Science  
+🇩🇪 Based in Germany  
+📧 [mr.shakirullah@gmail.com](mailto:mr.shakirullah@gmail.com)
 
 ---
 
-## 📌 License
+## 📄 License
 
-Open-source project available for educational, personal, and demo use.
+This project is open-source and available for educational, portfolio, and demo purposes.
