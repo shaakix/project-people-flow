@@ -17,6 +17,18 @@ This project was created to demonstrate full-stack development, data visualizati
 - ✅ Simple, clean UI with upload & dashboard navigation
 
 ---
+🧱 Project Structure
+Part 1: people-flow-simulator
+Built with: HTML + JavaScript
+
+Purpose: Simulate entries/exits and export CSV files
+
+Part 2: project-people-flow
+Built with: PHP + MySQL + Chart.js
+
+Purpose: Upload CSV, store in DB, visualize, and export PDF reports
+
+---
 
 ## 📁 Folder Structure
 
